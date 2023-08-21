@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, orientation=portrait">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages/inicio.css">
+    <link rel="stylesheet" href="assets/css/pages/t_facturas.css">
+
+    <style>
+        .hero__bg {
+            height: 28vh;
+        }
+
+        .grafico h2 {
+            padding-top: 3rem;
+            text-align: center;
+            text-transform: uppercase;
+            color: #2A3449;
+            font-size: 3rem;
+            padding-bottom: 2rem;
+        }
+
+        .grafico canvas {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .legend-container {
+            font-weight: 400;
+            color: #2A3449;
+            font-size: 1.7rem;
+        }
+
+        @media (max-height: 800px) {
+            .hero__bg {
+                background-size: 100% 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="hero">
+        <div class="hero__bg">
+            <header style="height: 76px;">
+                <nav>
+                    <div style="width: 28px;">
+                        <div class="menu__toggler mobile"><span></span></div>
+                    </div>
+                    <a id="hero__logo" href="index.html">
+                        <img src="assets/img/logo_w.png" alt="Logo Protelum">
+                    </a>
+                    <img id="nav_icon" class="nav_icon" src="assets/img/icons/lupa.png" alt="lupa">
+                </nav>
+        
+                <div class="menu">
+                    <img class="menu_logo" src="assets/img/logo_w.png" alt="">
+                    <p><img src="assets/img/icons/m_1.png" alt="Inicio"><a href="inicio.html">Inicio</a>
+                    </p>
+                    <p><img src="assets/img/icons/m_2.png" alt="Inicio"><a href="facturas-finales.html">Facturas</a></p>
+                    <p><img src="assets/img/icons/m_3.png" alt="Inicio"><a href="Idiomas.html">Idiomas</a></p>
+                    <p><img src="assets/img/icons/m_4.png" alt="Inicio"><a href="compartir.html">Compartir</a></p>
+                    <p><img src="assets/img/icons/m_5.png" alt="Inicio"><a href="contacto.html">Contacto</a></p>
+                    <p><img src="assets/img/icons/m_6.png" alt="Inicio"><a href="terminos-y-condiciones.html">Términos y condiciones</a></p>
+                    <p><img src="assets/img/icons/m_7.png" alt="Inicio"><a href="politica-de-privacidad.html">Politica de privacidad</a></p>
+                    <p><img src="assets/img/icons/m_8.png" alt="Inicio"><a href="ayuda.html">Ayuda</a></p>
+                    <p><img src="assets/img/icons/m_9.png" alt="Inicio"><a href="login.html">Cerrar sesión</a></p>
+                    <div class="footer__icons">
+                        <ul class="icons">
+                            <li>
+                                <a href="#"><img class="icon" src="assets/img/social/r_1.png" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#"><img class="icon" src="assets/img/social/r_2.png" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#"><img class="icon" src="assets/img/social/r_3.png" alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+        </div>
+    </main>
+
+    <section class="container">
+        <div class="grafico">
+            <h2>Gastos</h2>
+            <div><canvas width="700" id="grafico1"></canvas></div>
+            <div class="legend-container">
+                <ul id="chart-legend" class="chart-legend"></ul>
+            </div>
+        </div>
+    </section>
+
+    <div class="separator"></div>
+    <div class="block">
+        <a href="#">
+            <img src="assets/img/steps/g_1.png" alt="">
+        </a>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+
+    <script>
+        var ctx = document.getElementById('grafico1').getContext('2d');
+        var data = {
+            eti: ['Completados', 'Pendientes'],
+            datasets: [{
+                data: [65, 35],
+                backgroundColor: ['#2474D3', '#29ABE2'],
+                borderWidth: 3,
+                borderColor: 'rgba(255, 255, 255, 0.3)',
+            }]
+        };
+        var options = {
+            responsive: true,
+            maintainAspectRatio: false,
+            cutoutPercentage: 73,
+            plugins: {
+                labels: {
+                    render: 'percentage',
+                    precision: 2,
+                    fontColor: 'white'
+                }
+            }
+        };
+        var grafico1 = new Chart(ctx, {
+            type: 'doughnut',
+            data: data,
+            options: options
+        });
+
+        var legendContainer = document.getElementById('chart-legend');
+        data.eti.forEach(function (label, index) {
+            var listItem = document.createElement('li');
+            listItem.innerHTML = '<div style="background-color: ' + data.datasets[0].backgroundColor[index] + ' ;width:2rem; height:2rem;" class="bullet"></div>' + label;
+            legendContainer.appendChild(listItem);
+        });
+    </script>
+</body>
+
+</html>

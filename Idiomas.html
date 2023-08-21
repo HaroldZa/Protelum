@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages/languages.css">
+
+</head>
+
+<body>
+    <main class="hero">
+        <div class="hero__bg">
+            <header style="height: 76px;">
+                <nav>
+                    <div style="width: 28px;">
+                        <div class="menu__toggler mobile"><span></span></div>
+                    </div>
+                    <a id="hero__logo" href="index.html">
+                        <img src="assets/img/logo_w.png" alt="Logo Protelum">
+                    </a>
+                    <img id="nav_icon" class="nav_icon" src="assets/img/icons/lupa.png" alt="lupa">
+                </nav>
+        
+                <div class="menu">
+                    <img class="menu_logo" src="assets/img/logo_w.png" alt="">
+                    <p><img src="assets/img/icons/m_1.png" alt="Inicio"><a href="inicio.html">Inicio</a>
+                    </p>
+                    <p><img src="assets/img/icons/m_2.png" alt="Inicio"><a href="facturas-finales.html">Facturas</a></p>
+                    <p><img src="assets/img/icons/m_3.png" alt="Inicio"><a href="Idiomas.html">Idiomas</a></p>
+                    <p><img src="assets/img/icons/m_4.png" alt="Inicio"><a href="compartir.html">Compartir</a></p>
+                    <p><img src="assets/img/icons/m_5.png" alt="Inicio"><a href="contacto.html">Contacto</a></p>
+                    <p><img src="assets/img/icons/m_6.png" alt="Inicio"><a href="terminos-y-condiciones.html">Términos y condiciones</a></p>
+                    <p><img src="assets/img/icons/m_7.png" alt="Inicio"><a href="politica-de-privacidad.html">Politica de privacidad</a></p>
+                    <p><img src="assets/img/icons/m_8.png" alt="Inicio"><a href="ayuda.html">Ayuda</a></p>
+                    <p><img src="assets/img/icons/m_9.png" alt="Inicio"><a href="login.html">Cerrar sesión</a></p>
+                    <div class="footer__icons">
+                        <ul class="icons">
+                            <li>
+                                <a href="#"><img class="icon" src="assets/img/social/r_1.png" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#"><img class="icon" src="assets/img/social/r_2.png" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#"><img class="icon" src="assets/img/social/r_3.png" alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+            <h1 class="title">Idiomas</h1>
+
+            <section class="main__content">
+                <ul>
+                    <li>
+                        <a href="#"><img src="assets/img/languages/b_1.png" alt="">Español</a>
+                        <img class="selected-image" src="assets/img/steps/icon_b.png" alt="">
+                    </li>
+                    <li>
+                        <a href="#"><img src="assets/img/languages/b_2.png" alt="">Ingles</a>
+                        <img class="selected-image" src="assets/img/steps/icon_b.png" alt="">
+                    </li>
+                    <li>
+                        <a href="#"><img src="assets/img/languages/b_3.png" alt="">Frances</a>
+                        <img class="selected-image" src="assets/img/steps/icon_b.png" alt="">
+                    </li>
+                    <li>
+                        <a href="#"><img src="assets/img/languages/b_4.png" alt="">Italiano</a>
+                        <img class="selected-image" src="assets/img/steps/icon_b.png" alt="">
+                    </li>
+                    <li>
+                        <a href="#"><img src="assets/img/languages/b_5.png" alt="">Portugues</a>
+                        <img class="selected-image" src="assets/img/steps/icon_b.png" alt="">
+                    </li>
+                    <li>
+                        <a href="#"><img src="assets/img/languages/b_6.png" alt="">Aleman</a>
+                        <img class="selected-image" src="assets/img/steps/icon_b.png" alt="">
+                    </li>
+                    <li>
+                        <a href="#"><img src="assets/img/languages/b_7.png" alt="">Ruso</a>
+                        <img class="selected-image" src="assets/img/steps/icon_b.png" alt="">
+                    </li>
+                    <li>
+                        <a href="#"><img src="assets/img/languages/b_8.png" alt="">Catalan</a>
+                        <img class="selected-image" src="assets/img/steps/icon_b.png" alt="">
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const listItems = document.querySelectorAll(".main__content li a");
+            const selectedImage = document.querySelectorAll(".selected-image");
+
+            selectedImage[0].style.display = "inline-block";
+
+            listItems.forEach(function (item, index) {
+                item.addEventListener("click", function (event) {
+                    event.preventDefault();
+
+                    selectedImage.forEach(function (image) {
+                        image.style.display = "none";
+                    });
+
+                    selectedImage[index].style.display = "inline-block";
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>

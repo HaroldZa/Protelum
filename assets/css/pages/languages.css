@@ -1,0 +1,68 @@
+body {
+    background-color: #CFDAE8;
+}
+.hero__bg {
+    position: relative;
+    background-image: url(../../img/main_pages/f_5.png);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 44vh;
+}
+
+.title {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-weight: 300;
+    color: #FFFFFF;
+    font-size: 2.3rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.main__content{
+    position: relative;
+    z-index: 1;
+    width: 88%;
+    max-width: 50rem;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 1.2rem;
+    font-weight: 300;
+
+}
+
+.main__content ul{
+    padding: 4rem 3rem;
+    list-style: none;
+}
+
+.main__content li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+}
+
+.main__content a{
+    width: 100%;
+    color: #2A3449;
+    display: flex;
+    align-items: center;
+}
+.main__content img{
+    width: 100%;
+    max-width: 4rem;
+    margin-right: 1rem;
+}
+
+.selected-image {
+    display: none;
+}
+
+@media (min-width: 670px) {
+    .hero__bg{
+        background-size: 100% 100%;
+    }
+}

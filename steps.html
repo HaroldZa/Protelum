@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages/steps.css">
+    <link rel="stylesheet" href="assets/library/swiperjs/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <main>
+        <header class="main__hero">
+            <div class="back">
+                <a href="#">
+                    <img src="assets/img/steps/arrow.png" alt="Flecha">
+                    Cancelar
+                </a>
+            </div>
+        </header>
+
+        <section class="main__content">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card step1">
+                            <div class="card__content">
+                                <img src="assets/img/steps/icon_b.png" alt="">
+                                <p>Añade los datos necesarios
+                                    de la factura para que tu
+                                    asesor la valide cuanto
+                                    antes</p>
+                            </div>
+                            <div class="card__photo">
+                                <a href="#">
+                                    <img src="assets/img/steps/g_1.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card step2">
+                            <div class="card__content">
+                                <img src="assets/img/steps/icon_b.png" alt="">
+                                <p>Escanea <br> tu factura</p>
+                            </div>
+                            <div class="card__photo">
+                                <a href="#">
+                                    <img src="assets/img/steps/g_1.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card step3">
+                            <div class="card__content">
+                                <img src="assets/img/steps/icon_b.png" alt="">
+                                <p>¡Despreocúpate al tener
+                                    todas tus facturas al día y
+                                    digitalizadas!</p>
+                            </div>
+                            <div class="card__photo">
+                                <a href="#">
+                                    <img src="assets/img/steps/g_1.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <button class="custom_pagination" id="btnNext">Siguiente</button>
+        </section>
+    </main>
+
+    <script src="assets/library/swiperjs/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.mySwiper', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: true,
+            loopedSlides: 3,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                350: {
+                    spaceBetween: -42,
+                },
+                551: {
+                    spaceBetween: -180,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1200: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        var btnNext = document.getElementById('btnNext');
+
+        btnNext.addEventListener('click', function () {
+            swiper.slideNext();
+        });
+
+        function reloadOnOrientationChange() {
+  const currentOrientation = window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
+
+  window.addEventListener('resize', function() {
+    const newOrientation = window.innerWidth > window.innerHeight ? 'landscape' : 'portrait';
+
+    if (newOrientation !== currentOrientation) {
+      location.reload();
+    }
+  });
+}
+
+window.onload = reloadOnOrientationChange;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, orientation=portrait">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages/inicio.css">
+    <link rel="stylesheet" href="assets/css/pages/t_facturas.css">
+
+    <style>
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .carousel-item {
+            margin-top: -3rem;
+            background: none !important;
+        }
+
+        .active .zoom {
+            display: block;
+        }
+
+        .zoom {
+            display: none;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8rem;
+            cursor: pointer;
+        }
+
+
+        .fullscreen-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .fullscreen-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .image-container span{
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            font-size: 3rem;
+        }
+        .separator{
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="hero">
+        <div class="hero__bg">
+            <header style="height: 76px;">
+                <nav>
+                    <div style="width: 28px;">
+                        <div class="menu__toggler mobile"><span></span></div>
+                    </div>
+                    <a id="hero__logo" href="index.html">
+                        <img src="assets/img/logo_w.png" alt="Logo Protelum">
+                    </a>
+                    <img id="nav_icon" class="nav_icon" src="assets/img/icons/lupa.png" alt="lupa">
+                </nav>
+        
+                <div class="menu">
+                    <img class="menu_logo" src="assets/img/logo_w.png" alt="">
+                    <p><img src="assets/img/icons/m_1.png" alt="Inicio"><a href="inicio.html">Inicio</a>
+                    </p>
+                    <p><img src="assets/img/icons/m_2.png" alt="Inicio"><a href="facturas-finales.html">Facturas</a></p>
+                    <p><img src="assets/img/icons/m_3.png" alt="Inicio"><a href="Idiomas.html">Idiomas</a></p>
+                    <p><img src="assets/img/icons/m_4.png" alt="Inicio"><a href="compartir.html">Compartir</a></p>
+                    <p><img src="assets/img/icons/m_5.png" alt="Inicio"><a href="contacto.html">Contacto</a></p>
+                    <p><img src="assets/img/icons/m_6.png" alt="Inicio"><a href="terminos-y-condiciones.html">Términos y condiciones</a></p>
+                    <p><img src="assets/img/icons/m_7.png" alt="Inicio"><a href="politica-de-privacidad.html">Politica de privacidad</a></p>
+                    <p><img src="assets/img/icons/m_8.png" alt="Inicio"><a href="ayuda.html">Ayuda</a></p>
+                    <p><img src="assets/img/icons/m_9.png" alt="Inicio"><a href="login.html">Cerrar sesión</a></p>
+                    <div class="footer__icons">
+                        <ul class="icons">
+                            <li>
+                                <a href="#"><img class="icon" src="assets/img/social/r_1.png" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#"><img class="icon" src="assets/img/social/r_2.png" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#"><img class="icon" src="assets/img/social/r_3.png" alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+
+
+            <h1 class="title">Facturas finales <span>120</span></h1>
+
+            <!-- Slider -->
+            <section id="slider" class="container">
+                <div class="carousel desktop">
+                    <div class="carousel-item row">
+                        <div class="image-container">
+                            <img width="100%" src="assets/img/factura.png" alt="">
+                            <img class="zoom" src="assets/img/zoom.png" alt="">
+                            <span>#0001</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item row">
+                        <div class="image-container">
+                            <img width="100%" src="assets/img/factura.png" alt="">
+                            <img class="zoom" src="assets/img/zoom.png" alt="">
+                            <span>#0002</span>
+                        </div>
+                    </div>
+                    <div class="carousel-item row">
+                        <div class="image-container">
+                            <img width="100%" src="assets/img/factura.png" alt="">
+                            <img class="zoom" src="assets/img/zoom.png" alt="">
+                            <span>#0003</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Slider -->
+            <div class="separator"></div>
+            <div class="block">
+                <a href="#">
+                    <img src="assets/img/steps/g_1.png" alt="">
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/library/jquery.min.js"></script>
+    <script src="assets/library/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.carousel').carousel({
+                padding: -260
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const zoomImages = document.querySelectorAll(".zoom");
+
+            zoomImages.forEach(function (zoomImage) {
+                zoomImage.addEventListener("click", function () {
+                    const parentItem = this.closest(".carousel-item");
+                    const mainImage = parentItem.querySelector("img:not(.zoom)");
+
+                    const fullscreenImage = document.createElement("div");
+                    fullscreenImage.classList.add("fullscreen-image");
+
+                    const imageElement = document.createElement("img");
+                    imageElement.src = mainImage.src;
+
+                    fullscreenImage.appendChild(imageElement);
+                    document.body.appendChild(fullscreenImage);
+
+                    fullscreenImage.addEventListener("click", function () {
+                        document.body.removeChild(this);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

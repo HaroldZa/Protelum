@@ -1,0 +1,54 @@
+.title span {
+    display: block;
+    padding-top: 1rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #29ABE2;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #2A3449;
+    padding: 11rem;
+    margin-top: -2rem;
+}
+
+.card h3 {
+    padding-top: 2rem;
+}
+
+.card span {
+    font-weight: bold;
+    font-size: 10rem;
+}
+
+.card img {
+    width: 100%;
+    max-width: 3rem;
+    margin-top: -4rem;
+}
+
+@media (min-width: 525px) {
+    .carousel {
+        perspective: 60rem;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .carousel {
+        perspective: 100rem;
+    }
+}
+
+
+@media (max-height: 770px) {
+
+    .carousel {
+        margin-bottom: 1rem;
+    }
+}

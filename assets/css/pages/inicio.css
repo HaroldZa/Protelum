@@ -1,0 +1,134 @@
+body {
+    background-color: #CFDAE8;
+}
+
+.hero__bg {
+    position: relative;
+    background-image: url(../../img/main_pages/f_3.png);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 44vh;
+}
+
+.title {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-weight: 300;
+    color: #FFFFFF;
+    font-size: 2.3rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 1);
+    opacity: 50%;
+    border-radius: 1em;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0;
+
+    box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.20);
+-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.20);
+-moz-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.20);
+
+
+}
+
+.card h2 {
+    color: white;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+.legend-container {
+    display: flex;
+    justify-content: start;
+    margin-top: 4rem;
+    font-weight: 300;
+    color: #2A3449;
+}
+
+canvas{
+    height: 200px;
+}
+
+.chart-legend {
+    list-style: none;
+}
+
+.chart-legend li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/*  Slider */
+#slider {
+    position: relative;
+    z-index: 1 !important;
+}
+.carousel .carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0
+}
+
+.carousel {
+    margin-top: 0rem;
+    height: 560px;
+    perspective: 30rem;
+}
+
+.carousel .carousel-item {
+    width: 85%;
+    max-width: 30rem;
+background: linear-gradient(to top, rgba(255, 255, 255, 1) 50%, rgba(202, 201, 201, 0.2));
+
+    height: auto;
+    border-radius: 15px;
+    opacity: 1 !important;
+    min-height: 40rem !important;
+}
+
+.block {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    z-index: 2;
+}
+
+.block img {
+    margin-top: -2rem;
+    padding: 1.5rem;
+    border-radius: 50%;
+    background-color: white;
+    width: 8rem;
+    box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.30);
+    -webkit-box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.30);
+    -moz-box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.30);
+}
+
+@media (min-width: 525px) {
+    .hero__bg {
+        background-size: 100% 100%;
+    }
+    .carousel {
+        perspective: 60rem;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .carousel {
+        perspective: 100rem;
+    }
+}

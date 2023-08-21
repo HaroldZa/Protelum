@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pages/auth.css">
+
+    <style>
+        .password-input {
+            position: relative;
+        }
+
+        #showPassword {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header class="main__hero">
+            <img src="assets/img/logo.png" alt="">
+        </header>
+
+        <section class="main__content">
+            <h2>Iniciar sesión</h2>
+            <form>
+                <input type="email" placeholder="E-mail">
+                <div class="password-input">
+                    <input id="password" type="password" placeholder="Contraseña">
+                    <img id="showPassword" src="assets/img/icons/disguise.png" alt="Mostrar contraseña">
+                </div>
+
+                <button>Entrar</button>
+            </form>
+            <div class="main__links">
+                <a href="#">¿Has olvidado tu contraseña?</a>
+                <hr>
+                <a href="/register.html">¿No tienes cuenta? Registrate</a>
+            </div>
+
+            <p class="terms">Al continuar usando esta aplicación aceptas los Términos y Condiciones de uso de
+                Grancanariawatersport.</p>
+        </section>
+    </main>
+
+
+    <script>
+        const passwordInput = document.getElementById("password");
+        const showPasswordBtn = document.getElementById("showPassword");
+        let passwordVisible = false;
+
+        showPasswordBtn.addEventListener("click", () => {
+            passwordVisible = !passwordVisible;
+            if (passwordVisible) {
+                passwordInput.type = "text";
+                showPasswordBtn.src = "assets/img/icons/show.png";
+                showPasswordBtn.alt = "Ocultar contraseña";
+            } else {
+                passwordInput.type = "password";
+                showPasswordBtn.src = "assets/img/icons/disguise.png";
+                showPasswordBtn.alt = "Mostrar contraseña";
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
